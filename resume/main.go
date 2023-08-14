@@ -7,9 +7,9 @@ import (
 
 func main() {
     pulumi.Run(func(ctx *pulumi.Context) error {
-        // GCP Storage Bucket to serve the static website
+        // Create a GCP Storage Bucket which will serve as a static website
         bucket, err := v1.NewBucket(ctx, "myBucket", &v1.BucketArgs{
-            Name:     pulumi.String("mark-bennett-resume"),
+            Name:     pulumi.String("myBucket"),
             Location: pulumi.String("US"),
             Website: &v1.BucketWebsiteArgs{
                 MainPageSuffix: pulumi.String("index.html"),
@@ -21,7 +21,7 @@ func main() {
         }
 
         // Export the website URL of the storage bucket
-        ctx.Export("websiteUrl",.SelfLink.ApplyT(func(link string) (string, error) {
+        ctx.Export("websiteUrl", bucketelfLink.ApplyT(func(link string) (string, error) {
             return "http://storage.googleapis.com/" + link, nil
         }).(pulumi.StringOutput))
 
