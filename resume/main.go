@@ -8,7 +8,8 @@ import (
 func main() {
     pulumi.Run(func(ctx *pulumi.Context) error {
         // Create a GCP Storage Bucket to serve your static website
-        bucket, err := storage.NewBucket(ctx, "my", &storage.BucketArgs			Name     pulumi("myBucket"),
+        bucket, err := storage.NewBucket(ctx, "my &storage.BucketArgs{
+            Name     pulumi.String("myBucket"),
             Location: pulumi.String("US"),
             Website: &storage.BucketWebsiteArgs{
                 MainPageSuffix: pulumi.String("index.html"),
@@ -16,13 +17,12 @@ func main() {
             },
         })
         if err != nil {
- err
+            return err
         }
 
         // Upload index.html to the bucket
-        _, err = storage.NewBucketObject "indexHtml", &storageucketObjectArgs{
-            B      bucket.Name			Name:        pulumi("index.html"),
-            Content:     pulumi.String("Mark Bennett Resume"), // Replace with actual HTML content
+        _, err = storage.NewBucketObject "indexHtml", &storage.BucketObject			B:      bucket.Name			Name:        pulumi.String("index.html"),
+            Content:     pulumi.String("1"), // Replace with actual HTML content
             ContentType: pulumi.String("text/html"),
         })
         if err != nil {
@@ -30,10 +30,9 @@ func main() {
         }
 
         // Upload 404.html to the bucket
-        _, err = storage.NewBucketObject(ctx "notFoundHtml", &storage.BucketObjectArgs{
-            Bucket:      bucket.Name,
-            Name:        pulumi.String("404.html"),
-            Content:     pulumi.String("404 - page not found"), // Replace with actual HTML content
+        _, err = storage.NewBucketObject(ctx, "not", &storage.BucketObjectArgs{
+            Bucket:      bucket.Name			Name        pulumi.String("404.html"),
+            Content:     pulumi.String("2"), // Replace with actual HTML content
             ContentType: pulumi.String("text/html"),
         })
         if err != nil {
@@ -41,7 +40,7 @@ func main() {
         }
 
         // Export the DNS name of the bucket
-        ctx.Export("bucketUrl", pulumi.Sprintf("http://storage.googleapis.com/%s", bucket.Url))
+        ctx.Export("bucketUrl", pulumi.Sprintf("http://storage.googleapis.com/%s", bucket.Name))
 
         return nil
     })
