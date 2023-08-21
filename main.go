@@ -61,6 +61,17 @@ func main() {
 			return err
 		}
 
+        resumeContentBytes, err := ioutil.ReadFile("resume.html")
+		_, err = storage.NewBucketObject(ctx, "resumeHtml", &storage.BucketObjectArgs{
+			Bucket:      bucket.Name,
+			Content:     pulumi.String(string(resumeContentBytes)),
+			ContentType: pulumi.String("text/html"),
+			Name:        pulumi.String("resume.html"),
+		})
+		if err != nil {
+			return err
+		}
+
 		ctx.Export("bucketURL", pulumi.Sprintf("https://storage.googleapis.com/%s", bucket.Name))
 
 
