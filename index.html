@@ -2,78 +2,128 @@
 <html lang="en">
 
 <head>
+    <!-- Add Bootstrap CSS and JS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mark Bennett - Sr. Platform Engineer</title>
-    <!-- Add any CSS files or links here -->
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open Sans:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .section-box {
+            border-left: 1px solid #0d6efd; /* Bootstrap's primary color */
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .section-header {
+            padding: 10px 0;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .section-content {
+            border-top: 1px solid #e9ecef;
+            padding-top: 15px;
+        }
+
+        .section-content ul {
+            padding-left: 20px;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Header Section -->
-    <header>
-        <h1>Mark Bennett</h1>
-        <h2>Sr. Platform Engineer</h2>
-        <img src="/www/markphoto.jpeg" alt="Mark Bennett" width="150">
-    </header>
+    <div class="container mt-5">
+        <!-- Header Section -->
+        <header class="text-center mb-5">
+            <img src="/www/markphoto.jpeg" alt="Mark Bennett" width="150" class="rounded-circle mb-2">
+            <h1 class="display-4">Mark Bennett</h1>
+            <h2 class="lead">Sr. Platform Engineer</h2>
+        </header>
 
-    <!-- Contact Information -->
-    <section>
-        <h3>Contact Me:</h3>
-        <p>Email: <a href="mailto:Marksg1mail@gmail.com">Marksg1mail@gmail.com</a></p>
-        <p>Professional Email: <a href="mailto:Mark.Bennett@systemward.com">Mark.Bennett@systemward.com</a></p>
-    </section>
+        <!-- Contact Information -->
+        <div class="section-box">
+            <h3 class="section-header">Contact Me:</h3>
+            <div class="section-content">
+                <p>Email: <a href="mailto:Marksg1mail@gmail.com">Marksg1mail@gmail.com</a></p>
+                <p>Professional Email: <a href="mailto:Mark.Bennett@systemward.com">Mark.Bennett@systemward.com</a></p>
+            </div>
+        </div>
 
-    <!-- Biography Section -->
-    <section>
-        <h3>About Me</h3>
-        <p>Hello! My name is Mark. I've been working the Information Technology/Engineering field since 2009, beginning
-            as a Help Desk Technician, wading through Systems Engineering and Information Security, and am currently in
-            the DevOps/Cloud/Platform Engineering stage of my career. Some of my primary focuses include codifying
-            all-things-infrastructure, automating everything where possible (and prudent), and working with teams to
-            act as a force multiplier to enhance their productivity and overall experience.</p>
-    </section>
+        <!-- Biography Section -->
+        <div class="section-box">
+            <h3 class="section-header">About Me</h3>
+            <div class="section-content">
+                <p>Hello! My name is Mark. I've been working the Information Technology/Engineering field since 2009, beginning
+                    as a Help Desk Technician, wading through Systems Engineering and Information Security, and am currently in
+                    the DevOps/Cloud/Platform Engineering stage of my career. Some of my primary focuses include codifying
+                    all-things-infrastructure, automating everything where possible (and prudent), and working with teams to
+                    act as a force multiplier to enhance their productivity and overall experience.</p>
+            </div>
+        </div>
 
-    <!-- Resume Link -->
-    <section>
-        <h3>Resumé</h3>
-        <p>Some of this is included in my Biography section, so <a href="resume.html">check out this hyperlink</a>
-            for a copy of my resumé.</p>
-    </section>
+        <!-- Resume Link -->
+        <div class="section-box">
+            <h3 class="section-header">Resumé</h3>
+            <div class="section-content">
+                <p>Some of this is included in my Biography section, so <a href="resume.html">check out this hyperlink</a>
+                    for a copy of my resumé.</p>
+            </div>
+        </div>
 
-    <!-- Portfolio and Website Showcase -->
-    <section>
-        <h3>Portfolio</h3>
-        <p>Unfortunately, most of my work is not my work and is owned as intellectual property of the clients that I've
-            worked with, so I have decided to create this website as a demonstration of capability using Pulumi, Google
-            Cloud Platform, GitHub, and more! This is a living project and will be updated over time. The next update
-            will likely include HTTPS support, but that requires a load balancer that I am not yet willing to pay for.</p>
-    </section>
+        <!-- Portfolio and Website Showcase -->
+        <div class="section-box">
+            <h3 class="section-header">Portfolio</h3>
+            <div class="section-content">
+                <p>Unfortunately, most of my work is not my work and is owned as intellectual property of the clients that I've
+                    worked with, so I have decided to create this website as a demonstration of capability using Pulumi, Google
+                    Cloud Platform, GitHub, and more! This is a living project and will be updated over time. The next update
+                    will likely include HTTPS support, but that requires a load balancer that I am not yet willing to pay for.</p>
+            </div>
+        </div>
 
-    <!-- Skills and Technologies -->
-    <section>
-        <h3>Skills & Technologies</h3>
-        <ul>
-            <li>Effective communication</li>
-            <li>Collaboration</li>
-            <li>Terraform</li>
-            <!-- ... -->
-            <li>Azure/AWS/GCP</li>
-        </ul>
-        <p>...and many more which may be found on my <a href="resume.html">resumé</a>.</p>
-    </section>
+        <!-- Skills and Technologies -->
+        <div class="section-box">
+            <h3 class="section-header">Skills & Technologies</h3>
+            <div class="section-content">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Effective communication</li>
+                    <li class="list-group-item">Collaboration</li>
+                    <li class="list-group-item">Terraform</li>
+                    <li class="list-group-item">Azure/AWS/GCP</li>
+                </ul>
+                <p class="mt-2">...and many more which may be found on my <a href="resume.html">resumé</a>.</p>
+            </div>
+        </div>
 
-    <!-- Other Projects -->
-    <section>
-        <h3>Other Projects</h3>
-        <p>Check out <a href="https://systemward.com">systemward.com</a> and
-            <a href="https://thepentadgroup.com">thepentadgroup.com</a> for some other work that I've done as a sole
-            owner/operator and as a partner for a collective of consultants working with some household names!</p>
-    </section>
+        <!-- Other Projects -->
+        <div class="section-box">
+            <h3 class="section-header">Other Projects</h3>
+            <div class="section-content">
+                <p>Check out <a href="https://systemward.com">systemward.com</a> and
+                    <a href="https://thepentadgroup.com">thepentadgroup.com</a> for some other work that I've done as a sole
+                    owner/operator and as a partner for a collective of consultants working with some household names!</p>
+            </div>
+        </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2023 Mark Bennett | All Rights Reserved.</p>
-    </footer>
+        <!-- Footer -->
+        <footer class="text-center mt-5">
+            <p>© 2023 Mark Bennett | All Rights Reserved.</p>
+        </footer>
+    </div>
 
 </body>
 
